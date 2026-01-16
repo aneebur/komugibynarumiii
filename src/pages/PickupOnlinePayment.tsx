@@ -10,6 +10,7 @@ interface OrderData {
     email: string;
     phone: string;
     address: string;
+    specialInstructions: string;
   };
   cartItems: Array<{
     id: string;
@@ -132,6 +133,7 @@ export default function PickupOnlinePayment() {
             email: orderData.formData.email,
             phone: orderData.formData.phone,
             address: orderData.formData.address,
+            special_instructions: orderData.formData.specialInstructions,
             payment_method: 'online',
             payment_status: 'pending_verification',
             payment_expires_at: paymentExpiresAt.toISOString(),

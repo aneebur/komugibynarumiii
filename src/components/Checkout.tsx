@@ -8,6 +8,7 @@ interface FormData {
   email: string;
   phone: string;
   address: string;
+  specialInstructions: string;
   paymentMethod: 'cash' | 'delivery';
 }
 
@@ -24,6 +25,7 @@ export default function Checkout({ cartItems, onClose }: CheckoutProps) {
     email: '',
     phone: '',
     address: '',
+    specialInstructions: '',
     paymentMethod: 'cash',
   });
 
@@ -104,6 +106,15 @@ export default function Checkout({ cartItems, onClose }: CheckoutProps) {
             onChange={handleInputChange}
             rows={3}
             required
+            className={`${inputClass} resize-none`}
+          />
+
+          <textarea
+            name="specialInstructions"
+            placeholder="Special Instructions (optional)"
+            value={formData.specialInstructions}
+            onChange={handleInputChange}
+            rows={3}
             className={`${inputClass} resize-none`}
           />
 
