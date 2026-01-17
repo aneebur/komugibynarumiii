@@ -1,4 +1,4 @@
-import { ShoppingCart } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 import { Product } from '../types';
 
 interface GalleryProps {
@@ -49,6 +49,18 @@ export default function Gallery({ onAddToCart }: GalleryProps) {
           <p className="text-gray-600 max-w-2xl mx-auto">
             Create your perfect cake with our custom design service. From elegant celebrations to playful themes, we bring your cake dreams to life.
           </p>
+          <div className="mt-6 flex items-center justify-center gap-3 bg-white rounded-lg p-4 max-w-lg mx-auto">
+            <MessageCircle className="text-green-500" size={24} />
+            <span className="text-gray-700">To order customised cakes </span>
+            <a
+              href="https://wa.me/923368862917?text=HI%20I%20would%20like%20to%20order%20customised%20cake"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-green-600 font-semibold hover:text-green-700 transition-colors"
+            >
+              contact us on WhatsApp
+            </a>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -70,16 +82,6 @@ export default function Gallery({ onAddToCart }: GalleryProps) {
               <div className="p-4">
                 <h3 className="font-semibold text-gray-800 mb-2">{product.name}</h3>
                 <p className="text-sm text-gray-600 mb-3 line-clamp-2">{product.description}</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-lg font-bold text-amber-700">{product.price} PKR</span>
-                  <button
-                    onClick={() => onAddToCart(product)}
-                    className="bg-amber-600 text-white px-4 py-2 rounded-lg hover:bg-amber-700 transition-colors duration-200 flex items-center space-x-2 transform hover:scale-105"
-                  >
-                    <ShoppingCart size={18} />
-                    <span>Add</span>
-                  </button>
-                </div>
               </div>
             </div>
           ))}
